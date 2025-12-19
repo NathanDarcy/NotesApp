@@ -19,5 +19,11 @@ export default defineConfig([
       ecmaVersion: 2020,
       globals: globals.browser,
     },
+    rules: {
+      semi: 'off',
+      quotes: ['error', 'single'],
+      curly: ['error', 'all'],
+      'require-await': 'error',
+    },
   },
 ])
