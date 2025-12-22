@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import NoteForm from '../NoteForm'
+import NoteForm from '../components/NoteForm'
 
 function renderComponent() {
   render(<NoteForm notes={[]} setNotes={vi.fn()} />)

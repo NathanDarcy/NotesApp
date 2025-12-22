@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import type { Note } from './types/note.type'
-import NoteForm from './components/NoteForm'
-import NoteList from './components/NoteList'
+import type { Note } from './modules/notes/types/note.type'
+import NoteForm from './modules/notes/components/NoteForm'
+import NoteList from './modules/notes/components/NoteList'
 
 export default function App() {
   const [notes, setNotes] = useState<Note[]>([])
