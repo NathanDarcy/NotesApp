@@ -1,10 +1,16 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import type { Note } from './modules/notes/types/note.type'
 import NoteForm from './modules/notes/components/NoteForm'
 import NoteList from './modules/notes/components/NoteList'
 
 export default function App() {
-  const [notes, setNotes] = useState<Note[]>([])
+  const [notes, setNotes] = useState<Note[]>(() => {
+    return JSON.parse(localStorage.getItem('notes') ?? '[]') || []
+  })
+
+  useEffect(() => {
+    localStorage.setItem('notes', JSON.stringify(notes))
+  }, [notes])
 
   function handleDeleteNote(id: number) {
     const confirmDelete = window.confirm(
