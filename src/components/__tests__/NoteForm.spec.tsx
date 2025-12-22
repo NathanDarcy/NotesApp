@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react'
 import NoteForm from '../NoteForm'
 
 function renderComponent() {
-  render(<NoteForm />)
+  render(<NoteForm notes={[]} setNotes={vi.fn()} />)
 }
 
 describe('NoteForm', () => {
